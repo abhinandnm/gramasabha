@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GramaSabha</title>
+</head>
+
+<body>
+    <p>Welcome to GramaSabha!</p>
+    <p>Check the console in your terminal to see your Session ID!</p>
+    <button id='findstranger'>Find Stranger </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <!-- downloading socketio client library via cdn -->
+    <script>
+        const socket = io();
+        const findBtn = document.getElementById("findstranger");
+
+        findBtn.addEventListener("click", () => {
+            console.log("finding stranger");
+            socket.emit("join_queue");
+        });
+
+        socket.on("match found", () => {
+            alert("We found a stranger! Get ready!");
+        });
+
+    </script>
+</body>
+
+</html>
