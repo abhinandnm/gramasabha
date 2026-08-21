@@ -11,22 +11,22 @@
     <p>Welcome to GramaSabha!</p>
     <p>Check the console in your terminal to see your Session ID!</p>
     <button id='findstranger'>Find Stranger </button>
+    <div style="display: flex; gap: 20px; margin-top: 20px;">
+        <div>
+            <h3>You (Local)</h3>
+            <video id="localVideo" autoplay playsinline muted width="300"
+                style="background: black;"></video><!--muted to avoid screetching during dev-->
+        </div>
+        <div>
+            <h3>Stranger (Remote)</h3>
+            <video id="remoteVideo" autoplay playsinline width="300" style="background: black;"></video>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
     <!-- downloading socketio client library via cdn -->
-    <script>
-        const socket = io();
-        const findBtn = document.getElementById("findstranger");
-
-        findBtn.addEventListener("click", () => {
-            console.log("finding stranger");
-            socket.emit("join_queue");
-        });
-
-        socket.on("match found", () => {
-            alert("We found a stranger! Get ready!");
-        });
-
-    </script>
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>
