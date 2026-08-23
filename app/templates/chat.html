@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GramaSabha | Stranger Chat</title>
+    <title>GramaSabha | Chat Room</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -17,12 +17,14 @@
         <!-- Header -->
         <div class="chat-header">
             <div class="brand">
-                <div class="brand-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.25-1.35c1.42.79 3.06 1.35 4.75 1.35 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.47 0-2.88-.41-4.09-1.12l-.29-.17-3.03.78.8-2.95-.19-.31A7.957 7.957 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
-                    </svg>
-                </div>
-                <div class="brand-title">GramaSabha</div>
+                <a href="/" class="brand-link" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <div class="brand-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.25-1.35c1.42.79 3.06 1.35 4.75 1.35 5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.47 0-2.88-.41-4.09-1.12l-.29-.17-3.03.78.8-2.95-.19-.31A7.957 7.957 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <div class="brand-title">GramaSabha</div>
+                </a>
             </div>
             <div class="status-badge">
                 <span id="statusDot" class="status-dot disconnected"></span>
@@ -45,8 +47,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
-    <!-- downloading socketio client library via cdn -->
-    <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
