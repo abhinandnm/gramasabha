@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GramaSabha | Upgrading</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f1117;
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Ambient glow orbs */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .glow-orb-1 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%);
+            top: 5%; left: 10%;
+        }
+        .glow-orb-2 {
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08), transparent 70%);
+            bottom: 10%; right: 15%;
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 520px;
+            background: #161b27;
+            border-radius: 28px;
+            padding: 52px 44px;
+            box-shadow:
+                16px 16px 36px rgba(0, 0, 0, 0.5),
+                -8px -8px 24px rgba(255, 255, 255, 0.03),
+                inset 1px 1px 1px rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            text-align: center;
+            animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: translateY(16px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Animated spinner icon */
+        .icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            background: rgba(99, 102, 241, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                6px 6px 14px rgba(0, 0, 0, 0.4),
+                -3px -3px 8px rgba(255, 255, 255, 0.04);
+        }
+
+        .icon-wrap svg {
+            animation: spin 2.4s linear infinite;
+            color: #818cf8;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 100px;
+            padding: 5px 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #818cf8;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #818cf8;
+            animation: pulse 1.6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.4; transform: scale(1.4); }
+        }
+
+        h1 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            line-height: 1.25;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.7;
+            max-width: 360px;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .footer {
+            font-size: 0.78rem;
+            color: #334155;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <div class="card">
+        <!-- Status badge -->
+        <div class="badge">
+            <span class="badge-dot"></span>
+            In Progress
+        </div>
+
+        <!-- Spinning upgrade icon -->
+        <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+            </svg>
+        </div>
+
+        <!-- Heading & message -->
+        <h1>We're upgrading the platform.</h1>
+        <p>We're currently moving to a new and improved backend. The updated experience will be available soon.</p>
+
+        <div class="divider"></div>
+
+        <span class="footer">GramaSabha &mdash; Real-Time Stranger Chat</span>
+    </div>
+</body>
+
+</html>
