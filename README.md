@@ -1,4 +1,5 @@
-# GramaSabha — Real-Time Stranger Chat Platform
+# GramaSabha (previously Mallu Match) — Real-Time Stranger Chat Platform
+
 
 > An anonymous, real-time stranger chat web application built with **Python (Flask)**, **Flask-SocketIO (WebSockets)**, and a **Dark Neumorphic (Soft UI)** frontend.
 
